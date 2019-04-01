@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Vesala</title>
+</head>
+<body>
+ <h1>Vesala</h1>
+ <script>
+ // pravim niz
+ var reci = [
+ "prosvetitelj",
+ "ucenik",
+ "ucitelj",
+ "programer",
+ "disident"
+ ];
+ // Nasumicna rec
+ var rec = reci[Math.floor(Math.random() * reci.length)];
+ // Odgovor-ostala slova
+ var odgovor = [];
+ for (var i = 0; i < rec.length; i++) {
+ odgovor[i] = "_";
+ }
+ var preostalaSlova = rec.length;
+ 
+ while (preostalaSlova > 0) {
+ 
+ alert(odgovor.join(" "));
+ // Pokusaj
+ var pokusaj = prompt("Pogodi slovo:");
+ if (pokusaj === null) {
+ break;
+ } else if (pokusaj.length !== 1) {
+ alert("Unesi samo jedno slovo");
+ } else {
+ // Ucitavanje reci korisnika
+ for (var j = 0; j < rec.length; j++) {
+ if (rec[j] === pokusaj) {
+ odgovor[j] = pokusaj;
+ preostalaSlova--;
+ }
+ }
+ }
+ }
+ //kraj
+ alert(odgovor.join(" "));
+ alert("Bravo, rec je: " + rec);
+ </script>
+</body>
+</html>
